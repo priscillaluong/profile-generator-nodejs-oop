@@ -56,19 +56,23 @@ const internQs = [
 
 class Employee {
     constructor (name, id, email) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
+        name = getName();
+        id = getId();
+        email = getEmail();
     }
+    
     getName() {
-        return `${name}`;
+      
     }
+
     getId() {
-        return `${id}`;
+  
     }
+
     getEmail() {
-        return `${email}`;
+  
     }
+    
     getRole() {
         return `Employee`;
     }
@@ -140,6 +144,9 @@ function init() {
                     const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
                     console.log(intern);
                 })
+              break;
+              case 'Done':
+
               break;
             default:
               addEmployee = '';
