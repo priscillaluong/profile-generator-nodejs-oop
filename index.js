@@ -8,23 +8,23 @@ const questions = [
     {
       type: 'input',
       name: 'name',
-      message: "Please enter the team manager's name:",
+      message: "Please enter employee name:",
     },
     {
       type: 'input',
       name: 'id',
-      message: "Please enter the team manager's id:",
+      message: "Please enter employee id:",
     },
     {
       type: 'input',
       name: 'email',
-      message: "Please enter the team manager's email address:",
+      message: "Please enter employee email address:",
     },
     {
       type: 'input',
       name: 'officeNumber',
-      message: "Please enter the team manager's office number:",
-    },
+      message: "Please enter employee office number:",
+    },  
     {
       type: 'list',
       name: 'addEmployee',
@@ -37,6 +37,82 @@ const questions = [
     }
 ];
 
+const engineerQs = [
+    {
+      type: 'input',
+      name: 'github',
+      message: "Please enter employee github:",
+    }
+]
+
+const internQs = [
+    {
+      type: 'input',
+      name: 'school',
+      message: "Please enter employee school:",
+    }
+]
+
+
+class Employee {
+    constructor (name, id, email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+    getName() {
+        return `${name}`;
+    }
+    getId() {
+        return `${id}`;
+    }
+    getEmail() {
+        return `${email}`;
+    }
+    getRole() {
+        return `Employee`;
+    }
+}
+
+class Manager extends Employee {
+    constructor (name, id, email, officeNumber) {
+        super (name, id, email);
+        this.officeNumber = officeNumber;
+    }
+    getOfficeNumber() {
+        return;
+    }
+    getRole() {
+        return `Manager`;
+    }
+}
+
+class Engineer extends Employee {
+    constructor (name, id, email, github) {
+        super (name, id, email);
+        this.github = github;
+    }
+    getGithub() {
+        return `${github}`;
+    }
+    getRole() {
+        return `Engineer`;
+    }
+}
+
+class Intern extends Employee {
+    constructor (name, id, email, school) {
+        super (name, id, email);
+        this.school = school;
+    }
+    getSchool(){
+        return `${school}`;
+    }
+    getRole() {
+        return `Intern`;
+    }
+}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
@@ -48,6 +124,26 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+        console.log(manager);
+        switch (answers.addEmployee) {
+            case 'Engineer':
+                inquirer.prompt(engineerQs)
+                .then((answers) => {
+                    const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+                    console.log(engineer);
+                })
+              break;
+            case 'Intern':
+                inquirer.prompt(internQs)
+                .then((answers) => {
+                    const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+                    console.log(intern);
+                })
+              break;
+            default:
+              addEmployee = '';
+          }
         const htmlContent = generateHTML(answers);
         writeToFile("./dist/index.html", htmlContent);
     });

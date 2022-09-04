@@ -41,71 +41,14 @@ const engineerQs = [
 function generateEmployee(employee) {
   switch (employee) {
     case 'Engineer':
-       = '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)';
+       
       break;
     case 'Intern':
-      licenseBadge = '![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)';
+      
       break;
     default:
       addEmployee = '';
   }
-}
-
-// CLASSES 
-class Employee {
-    constructor (name, id, email) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
-    }
-    getName() {
-        return `${name}`;
-    }
-    getId() {
-        return `${id}`;
-    }
-    getEmail() {
-        return `${email}`;
-    }
-    getRole() {
-        return `Employee`;
-    }
-}
-
-class Manager extends Employee {
-    constructor (name, id, email, officeNumber) {
-        super (name, id, email);
-        this.officeNumber = officeNumber;
-    }
-    getRole() {
-        return `Manager`;
-    }
-}
-
-class Engineer extends Employee {
-    constructor (name, id, email, github) {
-        super (name, id, email);
-        this.github = github;
-    }
-    getGithub() {
-        return `${github}`;
-    }
-    getRole() {
-        return `Engineer`;
-    }
-}
-
-class Intern extends Employee {
-    constructor (name, id, email, school) {
-        super (name, id, email);
-        this.school = school;
-    }
-    getSchool(){
-        return `${school}`;
-    }
-    getRole() {
-        return `Intern`;
-    }
 }
 
 // TODO: Create a function to generate markdown for README
