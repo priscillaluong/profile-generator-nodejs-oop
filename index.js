@@ -31,7 +31,8 @@ const questions = [
       message: 'Please select an employee to add to your team:',
       choices: [
           "Engineer",
-          "Intern"
+          "Intern",
+          "Done"
       ]
     }
 ];
