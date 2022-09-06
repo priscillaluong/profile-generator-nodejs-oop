@@ -5,56 +5,67 @@ const fs = require('fs');
 // If there is no license, return an empty string
 let addEmployee;
 
-const engineerQs = [
-    {
-      type: 'input',
-      name: 'name',
-      message: "Please enter the Engineer's name:",
-    },
-    {
-      type: 'input',
-      name: 'id',
-      message: "Please enter the Engineer's id:",
-    },
-    {
-      type: 'input',
-      name: 'email',
-      message: "Please enter the Engineer's email address:",
-    },
-    {
-      type: 'input',
-      name: 'github',
-      message: "Please enter the Engineer's office number:",
-    },
-    {
-      type: 'list',
-      name: 'addEmployee',
-      message: 'Please select an employee to add to your team:',
-      choices: [
-          "Engineer",
-          "Intern",
-          "Done"
-      ]
-    }
-];
-
 function generateEmployee(employee) {
-  switch (employee) {
-    case 'Engineer':
-       
-      break;
-    case 'Intern':
-      
-      break;
-    default:
-      addEmployee = '';
-  }
+
+}
+
+function generateIntern(intern){
+    return `<div class="col">
+    <div class="card employee-card" style="width: 20rem;">
+        <img src="#" class="card-img-top" alt="Profile Image">
+        <div class="card-body name-bg">
+          <h5 class="card-title">${intern.getName()}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ID: ${intern.getId()}</li>
+          <li class="list-group-item">Email: ${intern.getEmail()}</li>
+          <li class="list-group-item">Get Role: ${intern.getRole()}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+        </div>
+      </div>
+  </div>`
+}
+
+function generateManager(manager){
+    return `<div class="col">
+    <div class="card employee-card" style="width: 20rem;">
+        <img src="#" class="card-img-top" alt="Profile Image">
+        <div class="card-body name-bg">
+          <h5 class="card-title">${manager.getName()}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ID: ${manager.getId()}</li>
+          <li class="list-group-item">Email: ${manager.getEmail()}</li>
+          <li class="list-group-item">Get Role: ${manager.getRole()}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+        </div>
+      </div>
+  </div>`
+}
+
+function generateTeam(data){
+    let html = [];
+    console.log(data.length);
+    console.log(data);
+    html.push(data.filter(employee => employee.getRole() === 'Manager')
+    .map(manager => generateManager(manager)));
+    html.push(data.filter(employee => employee.getRole() === 'Intern')
+    .map(intern => generateIntern(intern))
+    .join(""));
+
+    html.push(data.filter(employee => employee.getRole() === 'Engineer')
+    .map(engineer => generateEngineer(engineer))
+    .join(""));
+    return html.join("");
 }
 
 // TODO: Create a function to generate markdown for README
 function generateHTML(data) {
-    const employee = data.addEmployee;
-    addNewEmployee(employee);
+console.log(data);
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -68,86 +79,7 @@ function generateHTML(data) {
       <header>My Team</header>
       <div class="container text-center">
           <div class="row justify-content-evenly">
-            <div class="col">
-              <div class="card employee-card" style="width: 20rem;">
-                  <img src="#" class="card-img-top" alt="Profile Image">
-                  <div class="card-body name-bg">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                  </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col">
-              <div class="card employee-card" style="width: 20rem;">
-                  <img src="#" class="card-img-top" alt="Profile Image">
-                  <div class="card-body name-bg">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                  </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col">
-              <div class="card employee-card" style="width: 20rem;">
-                  <img src="#" class="card-img-top" alt="Profile Image">
-                  <div class="card-body name-bg">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                  </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col">
-              <div class="card employee-card" style="width: 20rem;">
-                  <img src="#" class="card-img-top" alt="Profile Image">
-                  <div class="card-body name-bg">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                  </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col">
-              <div class="card employee-card" style="width: 20rem;">
-                  <img src="#" class="card-img-top" alt="Profile Image">
-                  <div class="card-body name-bg">
-                    <h5 class="card-title">Card title</h5>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                  </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                  </div>
-                </div>
-            </div>
+            ${generateTeam(data)}
           </div>
         </div>
   </body>
