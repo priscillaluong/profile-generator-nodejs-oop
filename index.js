@@ -124,7 +124,7 @@ const internQs = [
 ]
 
 // TODO: Create a function to write HTML file
-function WriteToFile(fileName, data) {
+function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
     err ? console.log(err) : console.log('Successfully created index.html!')
   );
@@ -142,6 +142,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-
-module.exports = WriteToFile;
