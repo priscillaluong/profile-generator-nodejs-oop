@@ -10,22 +10,22 @@ const questions = [
     {
       type: 'input',
       name: 'name',
-      message: "Please enter employee name:",
+      message: "Please enter manager's name:",
     },
     {
       type: 'input',
       name: 'id',
-      message: "Please enter employee id:",
+      message: "Please enter manager's ID:",
     },
     {
       type: 'input',
       name: 'email',
-      message: "Please enter employee email address:",
+      message: "Please enter manager's email address:",
     },
     {
       type: 'input',
       name: 'officeNumber',
-      message: "Please enter employee office number:",
+      message: "Please enter manager's office number:",
     }
 ];
 
@@ -81,22 +81,22 @@ const engineerQs = [
     {
       type: 'input',
       name: 'name',
-      message: "Please enter employee name:",
+      message: "Please enter engineer's name:",
     },
     {
       type: 'input',
       name: 'id',
-      message: "Please enter employee id:",
+      message: "Please enter engineer's ID:",
     },
     {
       type: 'input',
       name: 'email',
-      message: "Please enter employee email address:",
+      message: "Please enter engineer's email address:",
     },
     {
       type: 'input',
       name: 'github',
-      message: "Please enter employee github:",
+      message: "Please enter engineer's GitHub username:",
     }
 ]
 
@@ -104,22 +104,22 @@ const internQs = [
     {
       type: 'input',
       name: 'name',
-      message: "Please enter employee name:",
+      message: "Please enter intern's name:",
     },
     {
       type: 'input',
       name: 'id',
-      message: "Please enter employee id:",
+      message: "Please enter intern's ID:",
     },
     {
       type: 'input',
       name: 'email',
-      message: "Please enter employee email address:",
+      message: "Please enter intern's email address:",
     },
     {
       type: 'input',
       name: 'school',
-      message: "Please enter employee school:",
+      message: "Please enter intern's school:",
     }
 ]
 

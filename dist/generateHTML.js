@@ -8,7 +8,7 @@ function generateEngineer(engineer) {
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${engineer.getId()}</li>
-          <li class="list-group-item">Get Role: ${engineer.getRole()}</li>
+          <li class="list-group-item">Role: ${engineer.getRole()}</li>
           <li class="list-group-item">GitHub username:<a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
         </ul>
         <div class="card-body">
@@ -26,8 +26,8 @@ function generateIntern(intern){
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${intern.getId()}</li>
-          <li class="list-group-item">Get Role: ${intern.getRole()}</li>
-          <li class="list-group-item">Get Role: ${intern.getSchool()}</li>
+          <li class="list-group-item">Role: ${intern.getRole()}</li>
+          <li class="list-group-item">School: ${intern.getSchool()}</li>
         </ul>
         <div class="card-body">
           <a href="mailto:${intern.getEmail()}" class="card-link">${intern.getEmail()}</a>
@@ -44,8 +44,8 @@ function generateManager(manager){
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${manager.getId()}</li>
-          <li class="list-group-item">Get Role: ${manager.getRole()}</li>
-          <li class="list-group-item">Get Role: ${manager.getOfficeNumber()}</li>
+          <li class="list-group-item">Role: ${manager.getRole()}</li>
+          <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
         </ul>
         <div class="card-body">
           <a href="mailto:${manager.getEmail()}" class="card-link">${manager.getEmail()}</a>
