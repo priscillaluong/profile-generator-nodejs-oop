@@ -1,3 +1,7 @@
+.container-styling {
+    padding-bottom: 55px;
+}
+
 header {
     display: flex;
     flex-direction: column;

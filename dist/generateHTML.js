@@ -9,7 +9,7 @@ function generateEngineer(engineer) {
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${engineer.getId()}</li>
-          <li class="list-group-item">GitHub username:<a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+          <li class="list-group-item">GitHub username: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
         </ul>
         <div class="card-body">
           <a href="mailto:${engineer.getEmail()}" class="card-link">${engineer.getEmail()}</a>
@@ -92,7 +92,7 @@ function generateHTML(data) {
             <h1>Our Team</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </header>
-        <div class="container text-center">
+        <div class="container text-center container-styling">
             <div class="row justify-content-evenly">
                 ${generateTeam(data)}
             </div>
