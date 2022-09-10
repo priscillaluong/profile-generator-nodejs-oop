@@ -14,7 +14,7 @@ describe('Engineer', () => {
         // Assert 
         expect(`Engineer name is ${obj.name}, her id is ${obj.id}, email is: ${obj.email} and github link is: ${obj.github}`).toEqual(`Engineer name is ${name}, her id is ${id}, email is: ${email} and github link is: ${github}`);
     })
-    it("should return 'Engineer when the getRole() method is called", () => {
+    it("should return 'Engineer' when the getRole() method is called", () => {
         const obj = new Engineer('Priscila', 123, 'priscilla@test.com', 'https://github.com/priscillaluong');
         expect(obj.getRole()).toEqual(`Engineer`);
     })
