@@ -1,11 +1,3 @@
-const {Employee, Manager, Engineer, Intern} = require('../lib/classes.js');
-const inquirer = require('inquirer');
-const fs = require('fs');
-// TODO: Create a function that returns a license badge based 
-// on which license is passed in
-// If there is no license, return an empty string
-let addEmployee;
-
 function generateEngineer(engineer) {
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
