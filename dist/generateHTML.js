@@ -6,8 +6,24 @@ const fs = require('fs');
 // If there is no license, return an empty string
 let addEmployee;
 
-function generateEmployee(employee) {
-
+function generateEngineer(engineer) {
+    return `<div class="col">
+    <div class="card employee-card" style="width: 20rem;">
+        <img src="#" class="card-img-top" alt="Profile Image">
+        <div class="card-body name-bg">
+          <h5 class="card-title">${engineer.getName()}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ID: ${engineer.getId()}</li>
+          <li class="list-group-item">Email: ${engineer.getEmail()}</li>
+          <li class="list-group-item">Get Role: ${engineer.getRole()}</li>
+          <li class="list-group-item">Get Role: ${engineer.getGithub()}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+        </div>
+      </div>
+  </div>`
 }
 
 function generateIntern(intern){
@@ -21,6 +37,7 @@ function generateIntern(intern){
           <li class="list-group-item">ID: ${intern.getId()}</li>
           <li class="list-group-item">Email: ${intern.getEmail()}</li>
           <li class="list-group-item">Get Role: ${intern.getRole()}</li>
+          <li class="list-group-item">Get Role: ${intern.getSchool()}</li>
         </ul>
         <div class="card-body">
           <a href="#" class="card-link">Card link</a>
@@ -40,6 +57,7 @@ function generateManager(manager){
           <li class="list-group-item">ID: ${manager.getId()}</li>
           <li class="list-group-item">Email: ${manager.getEmail()}</li>
           <li class="list-group-item">Get Role: ${manager.getRole()}</li>
+          <li class="list-group-item">Get Role: ${manager.getOfficeNumber()}</li>
         </ul>
         <div class="card-body">
           <a href="#" class="card-link">Card link</a>
@@ -53,8 +71,19 @@ function generateTeam(data){
     console.log(data.length);
     console.log(data);
     for (const employee in data) {
-        console.log(employee.getRole());
+        switch (data[employee].getRole()) {
+            case 'Manager':
+                html.push(generateManager(data[employee]));
+            break;
+            case 'Engineer':
+                html.push(generateEngineer(data[employee]));
+            break;
+            case 'Intern':
+                html.push(generateIntern(data[employee]));
+            break;
+        }   
     }
+    return html.join("");
 /*     html.push(data.filter(employee => employee.getRole() === 'Manager').map(manager => generateManager(manager)));
 
     html.push(data.filter(employee => employee.getRole() === 'Intern')
@@ -69,7 +98,6 @@ function generateTeam(data){
 
 // TODO: Create a function to generate markdown for README
 function generateHTML(data) {
-console.log(data);
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
