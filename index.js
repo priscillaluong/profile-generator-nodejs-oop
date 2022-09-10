@@ -16,6 +16,12 @@ const questions = [
       type: 'input',
       name: 'id',
       message: "Please enter manager's ID:",
+      validate: (answer) => {
+        if (isNaN(answer)) {
+          return "Please enter numbers only:";
+        }
+        return true;
+    },
     },
     {
       type: 'input',
@@ -26,6 +32,12 @@ const questions = [
       type: 'input',
       name: 'officeNumber',
       message: "Please enter manager's office number:",
+      validate: (answer) => {
+        if (isNaN(answer)) {
+          return "Please enter numbers only:";
+        }
+        return true;
+    },
     }
 ];
 
@@ -37,7 +49,7 @@ const addEmployeeQ = [
       choices: [
           "Engineer",
           "Intern",
-          "Done"
+          "I have finished building the team"
       ]
     }
 ]
@@ -64,7 +76,7 @@ function buildTeam () {
                 })
                   
             break;
-            case 'Done':
+            case 'I have finished building the team':
                 console.log(employeesArr);
                 for (const employee in employeesArr) {
                     console.log("-------------------------")
@@ -87,6 +99,12 @@ const engineerQs = [
       type: 'input',
       name: 'id',
       message: "Please enter engineer's ID:",
+      validate: (answer) => {
+        if (isNaN(answer)) {
+          return "Please enter numbers only:";
+        }
+        return true;
+    },
     },
     {
       type: 'input',
@@ -110,6 +128,12 @@ const internQs = [
       type: 'input',
       name: 'id',
       message: "Please enter intern's ID:",
+      validate: (answer) => {
+        if (isNaN(answer)) {
+          return "Please enter numbers only:";
+        }
+        return true;
+    },
     },
     {
       type: 'input',
