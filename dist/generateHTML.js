@@ -3,6 +3,7 @@
 function generateEngineer(engineer) {
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
+        <i class="fa-solid fa-laptop-code" style="font-size:38px;padding:10px"></i>
         <div class="card-body name-bg">
           <h5 class="card-title title-styling">${engineer.getName()}</h5>
           <p class="role-styling">${engineer.getRole()}</p>
@@ -21,6 +22,7 @@ function generateEngineer(engineer) {
 function generateIntern(intern){
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
+        <i class="fa-solid fa-user-graduate" style="font-size:38px;padding:10px"></i>
         <div class="card-body name-bg">
           <h5 class="card-title title-styling">${intern.getName()}</h5>
           <p class="role-styling">${intern.getRole()}</p>
@@ -39,6 +41,7 @@ function generateIntern(intern){
 function generateManager(manager){
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
+        <i class="fa-solid fa-people-roof" style="font-size:38px;padding:10px"></i>
         <div class="card-body name-bg">
           <h5 class="card-title title-styling">${manager.getName()}</h5>
           <p class="role-styling">${manager.getRole()}</p>
@@ -84,6 +87,7 @@ function generateHTML(data) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Our Team</title>
 </head>
