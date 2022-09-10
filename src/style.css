@@ -2,25 +2,45 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: lightblue;
+    background-color: black;
 }
 
 header > h1 { 
     font-size: 60px;
     padding-top: 50px;
     font-family: 'Bebas Neue', cursive;
+    color: white;
 }
 
 header > p {
     font-size: 20px;
     padding: 15px 200px 20px 200px;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 .employee-card {
-    margin-top: 50px
+    margin-top: 50px;
+    box-shadow: 0 8px 8px -4px lightgray;
+    font-family: 'Roboto', sans-serif;
 }
 
 .name-bg {
-    background-color: lightcoral;
+    background-color: #062F4F;
+}
+
+.title-styling {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    padding-top: 10px;
+    color: white;
+}
+
+.role-styling {
+    color: white;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #882601;
 }
