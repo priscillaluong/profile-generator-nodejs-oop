@@ -3,18 +3,16 @@
 function generateEngineer(engineer) {
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
-        <img src="#" class="card-img-top" alt="Profile Image">
         <div class="card-body name-bg">
           <h5 class="card-title">${engineer.getName()}</h5>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${engineer.getId()}</li>
-          <li class="list-group-item">Email: ${engineer.getEmail()}</li>
           <li class="list-group-item">Get Role: ${engineer.getRole()}</li>
-          <li class="list-group-item">Get Role: ${engineer.getGithub()}</li>
+          <li class="list-group-item">GitHub username:<a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
+          <a href="mailto:${engineer.getEmail()}" class="card-link">${engineer.getEmail()}</a>
         </div>
       </div>
   </div>`
@@ -23,18 +21,16 @@ function generateEngineer(engineer) {
 function generateIntern(intern){
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
-        <img src="#" class="card-img-top" alt="Profile Image">
         <div class="card-body name-bg">
           <h5 class="card-title">${intern.getName()}</h5>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${intern.getId()}</li>
-          <li class="list-group-item">Email: ${intern.getEmail()}</li>
           <li class="list-group-item">Get Role: ${intern.getRole()}</li>
           <li class="list-group-item">Get Role: ${intern.getSchool()}</li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
+          <a href="mailto:${intern.getEmail()}" class="card-link">${intern.getEmail()}</a>
         </div>
       </div>
   </div>`
@@ -43,18 +39,16 @@ function generateIntern(intern){
 function generateManager(manager){
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
-        <img src="#" class="card-img-top" alt="Profile Image">
         <div class="card-body name-bg">
           <h5 class="card-title">${manager.getName()}</h5>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${manager.getId()}</li>
-          <li class="list-group-item">Email: ${manager.getEmail()}</li>
           <li class="list-group-item">Get Role: ${manager.getRole()}</li>
           <li class="list-group-item">Get Role: ${manager.getOfficeNumber()}</li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
+          <a href="mailto:${manager.getEmail()}" class="card-link">${manager.getEmail()}</a>
         </div>
       </div>
   </div>`
@@ -77,6 +71,7 @@ function generateTeam(data){
             break;
         }   
     }
+    return html.join("");
 }
 
 // TODO: Create a function to generate code for index.html
