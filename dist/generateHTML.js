@@ -1,3 +1,4 @@
+const {Employee, Manager, Engineer, Intern} = require('../lib/classes.js');
 const inquirer = require('inquirer');
 const fs = require('fs');
 // TODO: Create a function that returns a license badge based 
@@ -51,8 +52,11 @@ function generateTeam(data){
     let html = [];
     console.log(data.length);
     console.log(data);
-    html.push(data.filter(employee => employee.getRole() === 'Manager')
-    .map(manager => generateManager(manager)));
+    for (const employee in data) {
+        console.log(employee.getRole());
+    }
+/*     html.push(data.filter(employee => employee.getRole() === 'Manager').map(manager => generateManager(manager)));
+
     html.push(data.filter(employee => employee.getRole() === 'Intern')
     .map(intern => generateIntern(intern))
     .join(""));
@@ -60,7 +64,7 @@ function generateTeam(data){
     html.push(data.filter(employee => employee.getRole() === 'Engineer')
     .map(engineer => generateEngineer(engineer))
     .join(""));
-    return html.join("");
+    return html.join(""); */
 }
 
 // TODO: Create a function to generate markdown for README

@@ -76,10 +76,12 @@ function buildTeam () {
             break;
             case 'Done':
                 console.log(employeesArr);
-                const htmlString = generateHTML(employeesArr);
-                fs.writeFile("./dist/index.html", htmlString, (err) =>
-                err ? console.log(err) : console.log('Successfully created index.html!')
-              );
+                for (const employee in employeesArr) {
+                    console.log("-------------------------")
+                    console.log(employeesArr[employee].getRole());
+                }
+                const htmlContent = generateHTML(employeesArr);
+                writeToFile("./dist/index.html", htmlContent);
             break;
         }
     })
@@ -143,33 +145,8 @@ function init() {
     inquirer.prompt(questions)
     .then((answers) => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-        console.log(manager.getRole());
         employeesArr.push(manager);
-        console.log(manager);
         buildTeam();
-       /*  switch (answers.addEmployee) {
-            case 'Engineer':
-                inquirer.prompt(engineerQs)
-                .then((answers) => {
-                    const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
-                    console.log(engineer);
-                })
-              break;
-            case 'Intern':
-                inquirer.prompt(internQs)
-                .then((answers) => {
-                    const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
-                    console.log(intern);
-                })
-              break;
-              case 'Done':
-
-              break;
-            default:
-              addEmployee = '';
-          } */
-        const htmlContent = generateHTML(answers);
-        writeToFile("./dist/index.html", htmlContent);
     });
 }
 
