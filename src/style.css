@@ -1,11 +1,20 @@
-header { 
+header {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    font-size: 40px;
     background-color: lightblue;
-    height: 150px;
+}
+
+header > h1 { 
+    font-size: 60px;
+    padding-top: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+header > p {
+    font-size: 20px;
+    padding: 15px 200px 20px 200px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .employee-card {
