@@ -1,3 +1,5 @@
+// Create functions to generate HTML code for each class 
+
 function generateEngineer(engineer) {
     return `<div class="col">
     <div class="card employee-card" style="width: 20rem;">
@@ -75,20 +77,10 @@ function generateTeam(data){
             break;
         }   
     }
-    return html.join("");
-/*     html.push(data.filter(employee => employee.getRole() === 'Manager').map(manager => generateManager(manager)));
-
-    html.push(data.filter(employee => employee.getRole() === 'Intern')
-    .map(intern => generateIntern(intern))
-    .join(""));
-
-    html.push(data.filter(employee => employee.getRole() === 'Engineer')
-    .map(engineer => generateEngineer(engineer))
-    .join(""));
-    return html.join(""); */
 }
 
-// TODO: Create a function to generate markdown for README
+// TODO: Create a function to generate code for index.html
+// Call generate team function and filter out objects for manager, engineer and intern.
 function generateHTML(data) {
   return `<!DOCTYPE html>
   <html lang="en">

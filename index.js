@@ -27,16 +27,6 @@ const questions = [
       name: 'officeNumber',
       message: "Please enter employee office number:",
     }
-/*     {
-      type: 'list',
-      name: 'addEmployee',
-      message: 'Please select an employee to add to your team:',
-      choices: [
-          "Engineer",
-          "Intern",
-          "Done"
-      ]
-    } */
 ];
 
 const addEmployeeQ = [
@@ -133,7 +123,7 @@ const internQs = [
     }
 ]
 
-// TODO: Create a function to write README file
+// TODO: Create a function to write HTML file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
     err ? console.log(err) : console.log('Successfully created index.html!')
