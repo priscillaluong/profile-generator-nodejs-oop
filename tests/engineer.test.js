@@ -8,7 +8,7 @@ describe('Engineer', () => {
         const name = 'Priscilla';
         const id = 123;
         const email = 'priscilla@test.com';
-        const github = 'https://github.com/priscillaluong'
+        const github = 'https://github.com/priscillaluong';
         // Act
         const obj = new Engineer(name, id, email, github);
         // Assert 
@@ -16,6 +16,8 @@ describe('Engineer', () => {
     })
     it("should return 'Engineer' when the getRole() method is called", () => {
         const obj = new Engineer('Priscila', 123, 'priscilla@test.com', 'https://github.com/priscillaluong');
-        expect(obj.getRole()).toEqual(`Engineer`);
+        const expectedValue = 'Engineer';
+        const actualValue = obj.getRole();
+        expect(actualValue).toEqual(expectedValue);
     })
 })
