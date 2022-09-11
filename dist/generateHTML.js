@@ -10,7 +10,7 @@ function generateEngineer(engineer) {
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${engineer.getId()}</li>
-          <li class="list-group-item">GitHub username: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+          <li class="list-group-item">GitHub username: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
         </ul>
         <div class="card-body">
           <a href="mailto:${engineer.getEmail()}" class="card-link">${engineer.getEmail()}</a>
