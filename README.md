@@ -74,7 +74,7 @@ node index.js
 
 ## Link to Sample HTML file:
 
-[Click here](https://github.com/priscillaluong/nodejs-readme-generator/blob/main/Develop/README%20(sample).md)
+[Click here](https://github.com/priscillaluong/profile-generator-nodejs-oop/blob/main/dist/index.html)
 
 ### Final note:
 
