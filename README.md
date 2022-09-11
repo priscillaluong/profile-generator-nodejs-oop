@@ -28,49 +28,49 @@ Acceptance Criteria:
 * Node.js fs module
 * Jest package
 
-# Application Interaction: 
+## Unit tests:
 
-![Application Interaction Start Screenshot](/Develop/assets/images/start.png)
+![Run Application Tests Screenshot](/assets/images/tests.png)
+
+* Running application tests using the Jest package and the following command:
+```bash
+npm run test
+```
+
+# Application Interaction: 
 
 * Navigate to the correct folder and run the following command: 
 ```bash
 node index.js
 ```
+* This will prompt the user with a series of questions about the employees in their team:
 
-![Application First Prompt Screenshot](/Develop/assets/images/first-prompt.png)
+![Application Interaction Start Screenshot](/assets/images/command1.png)
 
-The user will be prompted with a series of questions, the first question being 'What is the title of your project?'.
+![Application Prompts Screenshot](/assets/images/command2.png)
 
-![Application User Input Screenshot](/Develop/assets/images/second-prompt.png)
+* Only numerical values can be entered for the ID number. 
 
-* The user input will be written to the generated README.md file. 
+* The user will also be given a choice to create a summary for an 'Engineer' or 'Intern', or to finish creating the webpage by selecting 'I have finished building the team'.
 
-![Application Third Prompt Screenshot](/Develop/assets/images/third-prompt.png)
+![Application Prompts Screenshot](/assets/images/command.png)
 
-![Application List Prompt Screenshot](/Develop/assets/images/list.png)
+![Application Final Prompt Screenshot](/assets/images/command3.png)
 
-* There is a list prompt which allows the user to select from five different 'license' options. 
+* Once user has finished building their team, a message appears to let them know they have 'successfully created index.html!', which can be found in the 'dist' folder:
 
-![Application Finished Screenshot](/Develop/assets/images/finished.png)
+![HTML page successfully generated message screenshot](/assets/images/command4.png)
 
-* Once all questions have been answered, there is a console message which lets the user know they have successfully generated a README.md file. 
-
-![Application Generated Readme Screenshot](/Develop/assets/images/readme.png)
-
-* The README file is generated within the same directory. 
-
-![Application Sample README Screenshot](/Develop/assets/images/full-display.png)
-
-* See above sample README which contains a table of contents as well as the Description, Installation Guidelines etc. from the user input.
+![Generated HTML Screenshot](/assets/images/generated-html.png)
 
 ## Screenshot of Sample HTML file generated using application:
 
-![Generated README sample Screenshot](/Develop/assets/images/sample2.png) 
-![Generated README sample Screenshot](/Develop/assets/images/sample.png) 
+![Generated README sample Screenshot](/assets/images/browser1.png) 
+![Generated README sample Screenshot](/assets/images/browser2.png) 
 
 ## URL to Walkthrough Video of Application:
 
-[Click here](https://youtu.be/qqUTjRNRPQ4) 
+[Click here](https://youtu.be/SfbYbSv-FT0) 
 
 ## Link to Sample HTML file:
 
